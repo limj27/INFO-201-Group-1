@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1573690413555.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "222331674",
+    "id" : "5A2BC90E",
+    "lastKnownWriteTime" : 1573690200,
+    "last_content_update" : 1573690200,
+    "path" : "~/Desktop/School/UW/Courses/Fall 19/INFO 201/FinalProject/INFO-201-Group-1/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
