@@ -25,8 +25,14 @@ page_one <- tabPanel(
 )
 page_two <- tabPanel(
     "Background",
-    titlePanel("Background"),
-    
+    titlePanel("Information about the Project"),
+    p("We are focusing our project on the statistics of NBA and analyzing team data comapared with
+      the team's fan attendance per year. All of our group members were very interested in sports 
+      so it worked out for the better to select the topic that we were all interested."),
+    p("The main research questions that we are trying to answer with this project is to see how 
+      team performance affects the fan attendance of each team and analyze how they correlate to one
+      another. This maybe be used to see what the team's need to improve to increase their fan 
+      attendance so that their fan experience and financials will rise.")
 )
 page_three <- tabPanel(
     "Viz #1",
