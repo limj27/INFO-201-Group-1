@@ -9,6 +9,7 @@
 
 library(shiny)
 
+<<<<<<< HEAD
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
 
@@ -24,3 +25,8 @@ shinyServer(function(input, output) {
     })
 
 })
+=======
+server <- function(input, output) {
+    
+}
+>>>>>>> 9386c59743e7c586c210a6bcab162e7679b99dff
