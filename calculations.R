@@ -11,7 +11,7 @@ View(attendance_df)
 
 # Merging Dataframes
 attendance <- attendance_df %>%
-  select(`Starting Year`, Team, `Home: Avg Attendance`) %>%
+  select(`Start Year`, Team, `Home: Avg Attendance`) %>%
 View()
 
 wins <- wins_df %>% 
@@ -22,11 +22,12 @@ wins_percentages <- wins %>%
   
 # Teams stats vs fan attendance 
 stats <- stats_df %>%
-  select(`Start Year`, `FG%`, `3P%`, `FT%`, TOV, RPG, APG, PPG) %>%
+  select(`Start Year`, Team,`FG%`, `3P%`, `FT%`, TOV, RPG, APG, PPG) %>%
   View()
-
-df_new <- left_join(attendance_df, stats_df, by = c("Start Year", "Team"))
+df_new <- full_join(attendance_df, stats_df, by = c("Start Year"))
 View(df_new)
+
+
   
   
 
