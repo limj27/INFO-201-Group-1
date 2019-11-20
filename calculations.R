@@ -1,18 +1,14 @@
 library("readxl")
 library("ggplot2")
 
-stats_df <- read.csv("data/2012-18_teamBoxScore.csv", stringsAsFactors = FALSE)
-attendance_df <- read_excel("data/NBA Team Annual Attendance.xlsx")
+stats_df <- read_xlsx("data/nba_team_stats.xlsx")
+attendance_df <- read_xlsx("data/NBA Team Annual Attendance.xlsx")
 
 View(stats_df)
 View(attendance_df)
 
 # Merging Dataframes
-attendance <- attendance_df %>% 
-  select(`Starting Year`, Team, `Home: Avg Attendance`)
-
-stats <- stats_df %>% 
-  select(gmDate, teamAbbr, teamRslt)
+attendance <- attendance_df %>%
 
 
 
@@ -20,7 +16,7 @@ stats <- stats_df %>%
 plot <- ggplot(data = stats_df) +
   geom_line(mapping = aes(x = , y =)) +
   labs(
-    title = "Number of Wins per Season vs. Fan Attendance",
-    x = "Team Wins by Season",
+    title = "NBA Team Stats vs. Fan Attendance",
+    x = "Team Stats by Season",
     y = "Fan Attendance"
   )
