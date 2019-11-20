@@ -1,14 +1,22 @@
 library("readxl")
 library("ggplot2")
+library("dplyr")
 
 stats_df <- read_xlsx("data/nba_team_stats.xlsx")
 attendance_df <- read_xlsx("data/NBA Team Annual Attendance.xlsx")
-
-View(stats_df)
-View(attendance_df)
+wins_df <- read.xlsx("data/")
 
 # Merging Dataframes
 attendance <- attendance_df %>%
+  select(`Starting Year`, Team, `Home: Avg Attendance`)
+
+wins <- wins_df %>% 
+  select(`Start Year`, Team, `Win Percentage`)
+
+wins_percentages <- wins %>% 
+  group_by(Team) %>% 
+  
+  
 
 
 
