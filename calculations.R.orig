@@ -1,17 +1,20 @@
 library("readxl")
 library("ggplot2")
 library("dplyr")
+library("plotly")
 
 stats_df <- read_excel("data/nba_team_stats.xlsx")
 attendance_df <- read_excel("data/NBA Team Annual Attendance.xlsx")
 wins_df <- read_excel("data/team_win_percent.xlsx")
+
+<<<<<<< HEAD
 colnames(wins_df) <- c("Start Year", "Team", "Win Percentage", "Last 3 Games", "Last Game", "Home", 
                        "Away", "Previous Year Win Percentage")
 View(wins_df)
 
 
 
-# ------------Merging Dataframes-----------
+# -------------- Merging Dataframes -----------------
 
 colnames(attendance_df)[1] <- "Start Year"
 
@@ -23,18 +26,24 @@ attendance <- attendance_df %>%
 attendance_per_team <- attendance %>% 
   group_by(`Start Year`, Team) %>%
 print(attendance_per_team)
+=======
+View(stats_df)
+View(attendance_df)
 
 # Merging Dataframes
 attendance <- attendance_df %>%
   select(`Start Year`, Team, `Home: Avg Attendance`) %>%
+View()
+>>>>>>> 5958ee69de2ca571128493e865ba7d555b205f70
 
 wins <- wins_df %>% 
-  select(`Start Year`, Team, `Win Percentage`) %>%
+  select(`Start Year`, Team, `Win Percentage`)
 
 wins_percentages <- wins %>% 
-  
- group_by(`Start Year`, Team) %>% 
+<<<<<<< HEAD
+  group_by(`Start Year`, Team) %>% 
   pull(`Win Percentage`)
+=======
   group_by(Team) %>% 
   
 # Teams stats vs fan attendance 
@@ -48,6 +57,7 @@ View(df_new)
   
   
 
+>>>>>>> 5958ee69de2ca571128493e865ba7d555b205f70
 
 wins_and_attend <- left_join(wins, attendance, by = c("Start Year", "Team"))
 
