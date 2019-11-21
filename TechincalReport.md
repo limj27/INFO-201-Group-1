@@ -48,7 +48,7 @@ When looking back on our project there were some strengths and weakness that wer
 | Variable Name     | Description   | Data Type  | Measurement Type |
 | ----------------- |:-------------:|-----------:|:----------------:|
 | Fan Attendance    | The amount of fans that attended that NBA team's game| Integer | Per Year |
-| Revenue           | The amount of money that specific NBA team made | Double | Per Year |
+| Team's Stats          | The statistics for each team for that season | Double | Per Year |
 | Winning Percentage| The wins per year divided by the total amount of games they played | Double | Per Year |
 
 ### Appendix 2: Reflections

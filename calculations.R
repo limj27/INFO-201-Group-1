@@ -24,7 +24,6 @@ attendance <- attendance_df %>%
 # Getting attendance for each team
 attendance_per_team <- attendance %>% 
   group_by(`Start Year`, Team)
-print(attendance_per_team)
 
 
 

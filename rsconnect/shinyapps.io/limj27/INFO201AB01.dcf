@@ -1,0 +1,13 @@
+name: INFO201AB01
+title: INFO201AB01
+username:
+account: limj27
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1504903
+bundleId: 2606063
+url: https://limj27.shinyapps.io/INFO201AB01/
+when: 1574310425.64424
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: attendance.png|continuity.png|ProjectProposal.md|README.md|TechincalReport.md
