@@ -6,22 +6,22 @@
 #
 #    http://shiny.rstudio.com/
 #
-
+source("calculations.R")
 library(shiny)
-
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-
-    output$distPlot <- renderPlot({
-
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
-
+    output$Jordan <- renderPlotly({
+      return(
+        ggplotly(ggplot(data = wins_and_attend) +
+                   geom_point(mapping = aes(x = `Win Percentage`, y = `Home: Avg Attendance`, group = Team, 
+                                            colour = `Start Year`)) +
+                   labs(
+                     title = "NBA Team Wins vs. Fan Attendance",
+                     x = "Team Win Percentage by Season",
+                     y = "Fan Attendance"
+                   )
+                 )
+      )
     })
-
 })
 

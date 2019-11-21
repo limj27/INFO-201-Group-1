@@ -43,7 +43,8 @@ wins_and_attend <- left_join(wins, attendance, by = c("Start Year", "Team"))
 
 # Plot
 plot <- ggplot(data = wins_and_attend) +
-  geom_point(mapping = aes(x = `Win Percentage`, y = `Home: Avg Attendance`, group = `Start Year`)) +
+  geom_point(mapping = aes(x = `Win Percentage`, y = `Home: Avg Attendance`, group = Team, 
+                           colour = `Start Year`)) +
   labs(
     title = "NBA Team Wins vs. Fan Attendance",
     x = "Team Win Percentage by Season",

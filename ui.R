@@ -32,10 +32,12 @@ page_three <- tabPanel(
   titlePanel("Team Attendance vs Team's Winning %"),
   sidebarLayout(
     mainPanel(
-      p("This is where the plot goes")
+      plotlyOutput("Jordan")
     ),
     sidebarPanel(
-      p("This is where the controls go")
+      h3("Description"),
+      p("This graph is a scatterplot that represents the correlation between the win percentage of
+        of each NBA team from the 2010 to the 2015 season.")
     )
   )
 )
