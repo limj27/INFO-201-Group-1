@@ -9,11 +9,7 @@ wins_df <- read_excel("data/team_win_percent.xlsx")
 
 colnames(wins_df) <- c("Start Year", "Team", "Win Percentage", "Last 3 Games", "Last Game", "Home", 
                        "Away", "Previous Year Win Percentage")
-View(wins_df)
 
-View(attendance_df)
-
-View(stats_df)
 
 # -------------- Merging Dataframes -----------------
 
@@ -59,14 +55,23 @@ p_plot <- ggplotly(plot)
 # -------- Hannan's Work ---------------
   
 # Teams stats vs fan attendance 
-stats <- stats_df %>%
-  select(`Start Year`, Team,`FG%`, `3P%`, `FT%`, TOV, RPG, APG, PPG)
-  
-View(stats)
-  
-df_new <- left_join(stats, attendance, by = c("Start Year", "Team"))
-View(df_new)
+stats <- stats_df
 
+stats_attend <- left_join(stats, attendance, by = c("Start Year", "Team"))
+
+
+# Stats vs Attendance plot
+stats_attend_plot <- ggplot(data =  stats_attend) +
+  geom_point(mapping = aes(x = unlist(stats_attend["FG%"]), y = `Home: Avg Attendance`, 
+                           group = `Start Year`, colour = `Start Year`)) +
+  labs(
+    title = "NBA Team Statistics translating to Fan Attendance",
+    x = "Team Stats by Season",
+    y = "Fan Attendance"
+  )
+new_plot <- ggplotly(stats_attend_plot)
+is.vector(unlist(stats_attend["PPG"]))
 # ---------- End of Hannan's Work ----------
+
 
 

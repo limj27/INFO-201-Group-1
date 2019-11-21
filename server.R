@@ -23,5 +23,18 @@ shinyServer(function(input, output) {
                  )
       )
     })
+    output$Hannan <- renderPlotly({
+      return(
+        ggplotly(ggplot(data =  stats_attend) +
+                   geom_point(mapping = aes(x = unlist(stats_attend[input$stats]), y = `Home: Avg Attendance`, 
+                                            group = `Start Year`, colour = `Start Year`)) +
+                   labs(
+                     title = "NBA Team Statistics translating to Fan Attendance",
+                     x = "Team Stats by Season",
+                     y = "Fan Attendance"
+                   )
+        )
+      )
+    })
 })
 

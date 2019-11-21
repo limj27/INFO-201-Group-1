@@ -46,10 +46,24 @@ page_four <- tabPanel(
   titlePanel("Team Attendance vs Team's Performance Stats"),
   sidebarLayout(
     mainPanel(
-      p("This is where the plot goes")
+      plotlyOutput("Hannan")
     ),
     sidebarPanel(
-      p("This is where the controls go")
+      selectInput("stats", label = h3("Pick a stat to compare to fan attendance"),
+                  choices = list("Field Goals Made" = "FGM", "Field Goals Attempted" = "FGA",
+                                 "Field Goal %" = "FG%", "3 Pointers Made" = "3PM",
+                                 "3 Pointers Attempted" = "3PA", "Free Throws Made" = "FTM",
+                                 "Free Throws Attempted" = "FTA", "Free Throw %" = "FT%",
+                                 "Turnovers" = "TOV", "Personal Fouls" = "PF",
+                                 "Offensive Rebounds" = "ORB", "Defensive Rebounds" = "DRB",
+                                 "Rebounds Per Game" = "RPG", "Assists Per Game" = "APG",
+                                 "Steals Per Game" = "SPG", "Blocks Per Game" = "BPG",
+                                 "Points Per Games" = "PPG"),
+                  selected = 1
+                  ),
+      h3("Description"),
+      p("This scatterplot shows the correlation between NBA team's average 
+        stats and their fan attendance between the 2010 and 2015 seasons")
     )
   )
 )
