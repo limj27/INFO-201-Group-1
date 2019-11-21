@@ -7,14 +7,17 @@ stats_df <- read_excel("data/nba_team_stats.xlsx")
 attendance_df <- read_excel("data/NBA Team Annual Attendance.xlsx")
 wins_df <- read_excel("data/team_win_percent.xlsx")
 
-<<<<<<< HEAD
 colnames(wins_df) <- c("Start Year", "Team", "Win Percentage", "Last 3 Games", "Last Game", "Home", 
                        "Away", "Previous Year Win Percentage")
 View(wins_df)
 
+View(attendance_df)
 
+View(stats_df)
 
 # -------------- Merging Dataframes -----------------
+
+# -------- Jordan's Work ------------
 
 colnames(attendance_df)[1] <- "Start Year"
 
@@ -24,59 +27,45 @@ attendance <- attendance_df %>%
 
 # Getting attendance for each team
 attendance_per_team <- attendance %>% 
-  group_by(`Start Year`, Team) %>%
+  group_by(`Start Year`, Team)
 print(attendance_per_team)
-=======
-View(stats_df)
-View(attendance_df)
+
+
 
 # Merging Dataframes
 attendance <- attendance_df %>%
-  select(`Start Year`, Team, `Home: Avg Attendance`) %>%
-View()
->>>>>>> 5958ee69de2ca571128493e865ba7d555b205f70
+  select(`Start Year`, Team, `Home: Avg Attendance`)
 
 wins <- wins_df %>% 
   select(`Start Year`, Team, `Win Percentage`)
-
-wins_percentages <- wins %>% 
-<<<<<<< HEAD
-  group_by(`Start Year`, Team) %>% 
-  pull(`Win Percentage`)
-=======
-  group_by(Team) %>% 
   
-# Teams stats vs fan attendance 
-stats <- stats_df %>%
-  select(`Start Year`, Team,`FG%`, `3P%`, `FT%`, TOV, RPG, APG, PPG) %>%
-  View()
-df_new <- full_join(attendance_df, stats_df, by = c("Start Year"))
-View(df_new)
-
-
-  
-  
-
->>>>>>> 5958ee69de2ca571128493e865ba7d555b205f70
-
 wins_and_attend <- left_join(wins, attendance, by = c("Start Year", "Team"))
 
 # Plot
 plot <- ggplot(data = wins_and_attend) +
-  geom_line(mapping = aes(x = `Win Percentage`, y = `Home: Avg Attendance`, group = `Start Year`)) +
+  geom_point(mapping = aes(x = `Win Percentage`, y = `Home: Avg Attendance`, group = `Start Year`)) +
   labs(
     title = "NBA Team Wins vs. Fan Attendance",
-    x = "Team Wins by Season",
+    x = "Team Win Percentage by Season",
     y = "Fan Attendance"
   )
-
-int_plot <- plot_ly(
-  data = wins_and_attend,
-  x = ~`Win Percentage`,
-  y = ~`Home: Avg Attendance`,
-  color = ~c(Team, `Start Year`),
-  type = 
-)
-
 p_plot <- ggplotly(plot)
+
+# -------- End of Jordan's Work -----------------
+
+
+
+# -------- Hannan's Work ---------------
+  
+# Teams stats vs fan attendance 
+stats <- stats_df %>%
+  select(`Start Year`, Team,`FG%`, `3P%`, `FT%`, TOV, RPG, APG, PPG)
+  
+View(stats)
+  
+df_new <- left_join(stats, attendance, by = c("Start Year", "Team"))
+View(df_new)
+
+# ---------- End of Hannan's Work ----------
+
 
