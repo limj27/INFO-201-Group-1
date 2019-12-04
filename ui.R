@@ -21,8 +21,8 @@ page_two <- tabPanel(
      attendance so that their fan experience and financials will rise.")
 )
 page_three <- tabPanel(
-  "Team Attendance vs Team's Winning %",
-  titlePanel("Team Attendance vs Team's Winning %"),
+  "Fan Attendance vs Team's Winning %",
+  titlePanel("Fan Attendance vs Team's Winning %"),
   sidebarLayout(
     mainPanel(
       plotlyOutput("Jordan")
@@ -35,8 +35,8 @@ page_three <- tabPanel(
   )
 )
 page_four <- tabPanel(
-  "Team Attendance vs Team's Performance Stats",
-  titlePanel("Team Attendance vs Team's Performance Stats"),
+  "Fan Attendance vs Team's Performance Stats",
+  titlePanel("Fan Attendance vs Team's Performance Stats"),
   sidebarLayout(
     mainPanel(
       plotlyOutput("Hannan")
