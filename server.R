@@ -20,7 +20,7 @@ shinyServer(function(input, output) {
       return(
         ggplotly(ggplot(data =  stats_attend) +
                    geom_point(mapping = aes(x = unlist(stats_attend[input$stats]), y = `Home: Avg Attendance`, 
-                                            group = `Start Year`, colour = `Start Year`)) +
+                                            group = `Team`, colour = `Start Year`)) +
                    labs(
                      title = "NBA Team Statistics translating to Fan Attendance",
                      x = "Team Stats by Season",
