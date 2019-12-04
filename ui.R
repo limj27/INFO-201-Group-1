@@ -1,5 +1,6 @@
 library(shiny)
 library(plotly)
+library(shinythemes)
 #Code for all the seven pages
 page_one <- tabPanel(
   "Home Page",
@@ -101,6 +102,7 @@ page_seven <- tabPanel(
 
 
 ui <- fluidPage(
+  theme = shinytheme("cosmo"),
   titlePanel("NBA Analytics"),
   navlistPanel(
     page_one,
