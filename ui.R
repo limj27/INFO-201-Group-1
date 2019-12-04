@@ -61,7 +61,23 @@ page_four <- tabPanel(
 )
 page_five <- tabPanel(
   "Conclusion",
-  titlePanel("Conclusion")
+  titlePanel("Conclusion"), 
+  p("When looking back on our project there were some strengths and weakness
+    that were relevant during this process. A strength to our project was 
+    communication. We did a great job of communicating with each other while 
+    working on this project. We would constantly be checking in with each 
+    other and holding one another accountable. Another strength was consistency; we were all
+    consistent during this project by making sure that we met at least once a
+    week for two hours to make sure we made progress for our project. A weakness for us
+    was finding our data. Since there is a large amount of
+    teams in the NBA finding data for all teams was challenging. As a result of
+    that, we spent a lot of time trying to find good dataset which halted our 
+    progress to an extent.The main lesson that we learned from this project was 
+    understanding how to work in groups. It can be tricky trying to coordinate with 
+    other people because not everyone has the samw schedule. But as a group we did a great job 
+    making sure we could meet at times that worked for all of us and making sure that we met at these
+    times for the duration of the project. Future work that could be pursued as a result 
+    of this project is using the areas of focus and applying it to other sports as well.")
 )
 page_six <- tabPanel(
   "About the Tech",
